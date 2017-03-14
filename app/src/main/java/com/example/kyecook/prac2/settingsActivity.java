@@ -12,6 +12,23 @@ public class settingsActivity extends AppCompatActivity {
     private SeekBar valueOneSeekBar;
     private SeekBar valueTwoSeekBar;
 
+    private int rangeStart = 1;
+    private int rangeFinish = 10;
+
+    public void setRangeStart(int x){
+        this.rangeStart = x;
+    }
+    public int getRangeStart(){
+        return rangeStart;
+    }
+
+    public void setRangeFinish(int x){
+        this.rangeFinish = x;
+    }
+    public int getRangeFinish(){
+        return rangeFinish;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +36,12 @@ public class settingsActivity extends AppCompatActivity {
 
 
         valueOne = (TextView) findViewById(R.id.valueOne);
+        valueOne.setText(String.valueOf(rangeStart));
+
         valueTwo = (TextView) findViewById(R.id.valueTwo);
+        valueTwo.setText(String.valueOf(rangeFinish));
+
+
         valueOneSeekBar = (SeekBar) findViewById(R.id.valueOneSeekBar);
         valueTwoSeekBar = (SeekBar) findViewById(R.id.valueTwoSeekBar);
 
@@ -28,6 +50,11 @@ public class settingsActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 valueOne.setText(String.valueOf(progress));
+                rangeStart = progress;
+
+                System.out.println(rangeStart);
+
+
             }
 
             @Override
@@ -41,10 +68,14 @@ public class settingsActivity extends AppCompatActivity {
             }
         });
 
+        valueTwoSeekBar.setProgress(rangeFinish);
+
         valueTwoSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 valueTwo.setText(String.valueOf(progress));
+                rangeFinish = progress;
+
             }
 
             @Override

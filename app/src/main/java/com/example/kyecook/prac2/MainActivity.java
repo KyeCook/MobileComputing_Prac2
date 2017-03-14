@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView statusText;
     private EditText guessField;
 
+    private int rangeStart = new settingsActivity().getRangeStart();;
+    private int rangeFinish = new settingsActivity().getRangeFinish();;
 
 
     private int secretNumber;
@@ -25,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Random random = new Random();
-        secretNumber = 1 + random.nextInt(10);
 
+        Random random = new Random();
+        secretNumber = rangeStart + random.nextInt(rangeFinish);
 
         statusText = (TextView) findViewById(R.id.statusText);
         guessField = (EditText) findViewById(R.id.guessField);
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
     }
 
