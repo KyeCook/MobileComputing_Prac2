@@ -17,6 +17,14 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <TextView
+            android:text="Minimum Guess Value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:gravity="center" />
+
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +45,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
+        <TextView
+            android:text="Maximum Guess Value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:gravity="center" />
 
         <SeekBar
             android:layout_width="match_parent"

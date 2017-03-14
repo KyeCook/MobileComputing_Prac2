@@ -51,7 +51,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/settingsButton"
-        android:onClick="settingsHandler" />
+        android:onClick="settingsHandler"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        android:textSize="24sp" />
 
 
 </LinearLayout>
